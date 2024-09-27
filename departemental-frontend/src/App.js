@@ -107,7 +107,7 @@ function App() {
 
   useEffect(() => {
     // Fetch the department of the day
-    fetch("http://localhost:3001/api/department-of-the-day")
+    fetch("https://departemental-backend-j86rmcfaa-kahefsays-projects.vercel.app//api/department-of-the-day")
       .then((res) => res.json())
       .then((data) => {
         const storedDepartmentCode = localStorage.getItem("departmentCode");
