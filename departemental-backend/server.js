@@ -1,13 +1,14 @@
 const express = require("express");
+const path = require("path");
 const fs = require("fs");
 const cors = require("cors");
 const cron = require("node-cron");
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Load GeoJSON data
-const geoData = JSON.parse(fs.readFileSync("departements.geojson", "utf-8"));
+const geoData = JSON.parse(fs.readFileSync(path.join(__dirname, "departements.geojson"), "utf-8"));
 const departments = geoData.features.map((feature) => ({
   name: feature.properties.nom,
   code: feature.properties.code,
@@ -15,7 +16,7 @@ const departments = geoData.features.map((feature) => ({
 }));
 
 // Store used department codes in a local file (or switch to a database later)
-const USED_DEPARTMENTS_FILE = "./used_departments.json";
+const USED_DEPARTMENTS_FILE = path.join(__dirname, "used_departments.json");
 
 // Middleware
 app.use(
