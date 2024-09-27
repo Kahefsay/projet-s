@@ -18,7 +18,12 @@ const departments = geoData.features.map((feature) => ({
 const USED_DEPARTMENTS_FILE = "./used_departments.json";
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://departemental-frontend-ocpzbu31d-kahefsays-projects.vercel.app", // Remplacez par l'URL de votre front-end
+  })
+);
+
 app.use(express.json());
 
 // Load or initialize the used departments file
