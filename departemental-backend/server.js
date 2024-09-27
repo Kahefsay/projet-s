@@ -20,7 +20,7 @@ const departments = geoData.features.map((feature) => ({
 // Middleware
 app.use(
   cors({
-    origin: "https://departemental-frontend-ocpzbu31d-kahefsays-projects.vercel.app", // Remplacez par l'URL de votre front-end
+    origin: "https://departemental-frontend.vercel.app/", // Remplacez par l'URL de votre front-end
   })
 );
 
