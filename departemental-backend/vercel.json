@@ -2,7 +2,8 @@
   "version": 2,
   "functions": {
     "server.js": {
-      "includeFiles": ["departements.geojson", "used_departments.json"]
+      "includeFiles": "**/*.geojson",
+      "includeFiles": "**/*.json"
     }
   },
   "routes": [
