@@ -2,15 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/server.js",
+      "src": "server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "api/server.js" }
-  ],
-  "files": [
-    "departements.geojson",
-    "used_departments.json"
+    { "src": "/(.*)", "dest": "server.js" }
   ]
 }

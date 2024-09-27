@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Load GeoJSON data
-const geoData = JSON.parse(fs.readFileSync(path.join(__dirname, "../departements.geojson"), "utf-8"));
+const geoData = JSON.parse(fs.readFileSync(path.join(__dirname, "departements.geojson"), "utf-8"));
 
 const departments = geoData.features.map((feature) => ({
   name: feature.properties.nom,
@@ -17,7 +17,7 @@ const departments = geoData.features.map((feature) => ({
 }));
 
 // Store used department codes in a local file (or switch to a database later)
-const USED_DEPARTMENTS_FILE = path.join(__dirname, "../used_departments.json");
+const USED_DEPARTMENTS_FILE = path.join(__dirname, "used_departments.json");
 
 // Middleware
 app.use(
