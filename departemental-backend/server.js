@@ -20,21 +20,14 @@ const departments = geoData.features.map((feature) => ({
 // Middleware
 app.use(
   cors({
-    origin: "https://departemental-frontend-ocpzbu31d-kahefsays-projects.vercel.app",
+    origin: "https://departemental-frontend-ocpzbu31d-kahefsays-projects.vercel.app", // Remplacez par l'URL de votre front-end
   })
 );
-
-console.log("Current directory:", __dirname);
-console.log("GeoJSON path:", path.join(__dirname, "departements.geojson"));
-console.log("Used departments path:", USED_DEPARTMENTS_FILE);
 
 app.use(express.json());
 
 // Load or initialize the used departments file
 let usedDepartments = [];
-if (fs.existsSync(USED_DEPARTMENTS_FILE)) {
-  usedDepartments = JSON.parse(fs.readFileSync(USED_DEPARTMENTS_FILE, "utf-8"));
-}
 
 // Function to get a random unused department
 function getRandomDepartment() {
@@ -47,18 +40,16 @@ let departmentOfTheDay = null;
 
 // Function to pick a new department of the day
 function pickNewDepartment() {
-  // Get a new random department that hasn't been used yet
   const newDept = getRandomDepartment();
 
-  // If there are no unused departments left, we don't reset, we stop selecting
   if (!newDept) {
     console.log("All departments have been used. No more new departments to select.");
     return;
   }
 
-  // Store the selected department as the department of the day
+  // Store the new department in memory
   usedDepartments.push(newDept.code);
-  fs.writeFileSync(USED_DEPARTMENTS_FILE, JSON.stringify(usedDepartments, null, 2));
+
   departmentOfTheDay = newDept;
   console.log(`New department of the day picked: ${newDept.name}`);
 }
