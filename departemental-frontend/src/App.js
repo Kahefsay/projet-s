@@ -164,7 +164,7 @@ function App() {
 
   const handleShare = () => {
     const attemptsString = attempts.map((attempt) => (attempt.correct ? "🟩" : "❌")).join("");
-    const shareMessage = `#départemental #1 \n${attemptsString}\nhttps://www.départemental.fr`;
+    const shareMessage = `#departemental \n ${attemptsString}\n https://departemental-frontend.vercel.app/`;
     navigator.clipboard.writeText(shareMessage);
 
     setSnackbarMessage("Résultat copié dans le presse-papier");
