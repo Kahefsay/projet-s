@@ -20,9 +20,13 @@ const departments = geoData.features.map((feature) => ({
 // Middleware
 app.use(
   cors({
-    origin: "https://departemental-frontend-ocpzbu31d-kahefsays-projects.vercel.app", // Remplacez par l'URL de votre front-end
+    origin: "https://departemental-frontend-ocpzbu31d-kahefsays-projects.vercel.app",
   })
 );
+
+console.log("Current directory:", __dirname);
+console.log("GeoJSON path:", path.join(__dirname, "departements.geojson"));
+console.log("Used departments path:", USED_DEPARTMENTS_FILE);
 
 app.use(express.json());
 
