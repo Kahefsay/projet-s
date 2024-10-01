@@ -1,5 +1,4 @@
-require("dotenv").config();
-const fs = require("fs");
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
@@ -18,7 +17,7 @@ app.use(cors({ origin: true }));
 app.use(express.json());
 
 // Load GeoJSON data
-const geoData = JSON.parse(fs.readFileSync("./departements.geojson", "utf8"));
+const geoData = require("./departements.geojson");
 
 const departments = geoData.features.map((feature) => ({
   name: feature.properties.nom,
