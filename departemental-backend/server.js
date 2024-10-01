@@ -1,15 +1,23 @@
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
-const fs = require("fs");
 const cors = require("cors");
 const cron = require("node-cron");
+const { MongoClient } = require("mongodb");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// MongoDB connection
+const uri = process.env.MONGODB_URI; // Use the connection string from environment variables
+const client = new MongoClient(uri);
+
+// Middleware
+app.use(cors({ origin: true }));
+app.use(express.json());
+
 // Load GeoJSON data
-const geoData = JSON.parse(fs.readFileSync(path.join(__dirname, "./departements.geojson"), "utf-8"));
-const USED_DEPARTMENTS_FILE = path.join(__dirname, "./used_departments.json");
+const geoData = require("./departements.geojson");
 
 const departments = geoData.features.map((feature) => ({
   name: feature.properties.nom,
@@ -17,58 +25,71 @@ const departments = geoData.features.map((feature) => ({
   geometry: feature.geometry,
 }));
 
-// Middleware
-app.use(
-  cors({
-    origin: true, // Allows all origins
-  })
-);
-
-app.use(express.json());
-
-// Load or initialize the used departments file
-let usedDepartments = [];
+// Function to connect to MongoDB and get the used departments collection
+async function getUsedDepartmentsCollection() {
+  try {
+    await client.connect();
+    const db = client.db("departemental");
+    return db.collection("usedDepartments");
+  } catch (error) {
+    console.error("Failed to connect to MongoDB:", error);
+  }
+}
 
 // Function to get a random unused department
-function getRandomDepartment() {
-  const unusedDepartments = departments.filter((dept) => !usedDepartments.includes(dept.code));
+async function getRandomDepartment() {
+  const usedDepartmentsCollection = await getUsedDepartmentsCollection();
+  const usedDepartmentsDocs = await usedDepartmentsCollection.find().toArray();
+  const usedDepartmentCodes = usedDepartmentsDocs.map((doc) => doc.code);
+
+  const unusedDepartments = departments.filter((dept) => !usedDepartmentCodes.includes(dept.code));
   return unusedDepartments[Math.floor(Math.random() * unusedDepartments.length)];
 }
 
-// Variable to store the department of the day
-let departmentOfTheDay = null;
-
 // Function to pick a new department of the day
-function pickNewDepartment() {
-  const newDept = getRandomDepartment();
-
+async function pickNewDepartment() {
+  const newDept = await getRandomDepartment();
   if (!newDept) {
     console.log("All departments have been used. No more new departments to select.");
     return;
   }
 
-  // Store the new department in memory
-  usedDepartments.push(newDept.code);
+  const usedDepartmentsCollection = await getUsedDepartmentsCollection();
 
-  departmentOfTheDay = newDept;
+  // Store the new department in MongoDB
+  await usedDepartmentsCollection.insertOne({
+    code: newDept.code,
+    date: new Date().toISOString().split("T")[0], // Store the date in 'YYYY-MM-DD' format
+  });
+
   console.log(`New department of the day picked: ${newDept.name}`);
-}
-
-// Pick a department for the day on server start if not set
-if (!departmentOfTheDay) {
-  pickNewDepartment();
+  return newDept;
 }
 
 // Endpoint to get the department of the day
-app.get("/api/department-of-the-day", (req, res) => {
-  res.json(departmentOfTheDay);
+app.get("/api/department-of-the-day", async (req, res) => {
+  const usedDepartmentsCollection = await getUsedDepartmentsCollection();
+  const todayDate = new Date().toISOString().split("T")[0];
+
+  // Find if today's department is already picked
+  const todayDepartment = await usedDepartmentsCollection.findOne({ date: todayDate });
+
+  if (todayDepartment) {
+    const departmentInfo = departments.find((dept) => dept.code === todayDepartment.code);
+    res.json(departmentInfo);
+  } else {
+    // Pick a new department if none found for today
+    const newDept = await pickNewDepartment();
+    res.json(newDept);
+  }
 });
 
 // Schedule a task to pick a new department every day at midnight
-cron.schedule("0 0 * * *", () => {
-  pickNewDepartment();
+cron.schedule("0 0 * * *", async () => {
+  await pickNewDepartment();
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
