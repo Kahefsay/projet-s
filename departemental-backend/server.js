@@ -67,6 +67,13 @@ async function pickNewDepartment() {
   return newDept;
 }
 
+// Function to clear all used departments
+async function clearUsedDepartments() {
+  const usedDepartmentsCollection = await getUsedDepartmentsCollection();
+  await usedDepartmentsCollection.deleteMany({});
+  console.log("Cleared all used departments.");
+}
+
 // Endpoint to get the department of the day
 app.get("/api/department-of-the-day", async (req, res) => {
   const usedDepartmentsCollection = await getUsedDepartmentsCollection();
@@ -91,6 +98,10 @@ cron.schedule("0 0 * * *", async () => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`Server is running on http://localhost:${PORT}`);
+
+    // Clear all used departments and pick a new one
+    await clearUsedDepartments();
+    await pickNewDepartment();
 });
