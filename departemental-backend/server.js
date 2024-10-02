@@ -4,14 +4,19 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const cron = require("node-cron");
-const { MongoClient } = require("mongodb");
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // MongoDB connection
-const uri = process.env.MONGODB_URI; // Use the connection string from environment variables
-const client = new MongoClient(uri);
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
+});
 
 // Middleware
 app.use(cors({ origin: true }));
@@ -20,20 +25,34 @@ app.use(express.json());
 // Load GeoJSON data
 const geoData = JSON.parse(fs.readFileSync(path.join(__dirname, "./departements.geojson"), "utf-8"));
 
+/*
+  "superficie": 7369,
+  "population": 531345,
+  "detailsGeographiques": "plateaux",
+  "chefLieuPremiereLettre": "L",
+  "nombreDeCommunes": 800
+  */
+
 const departments = geoData.features.map((feature) => ({
   name: feature.properties.nom,
   code: feature.properties.code,
+  superficie: feature.properties.superficie,
+  population: feature.properties.population,
+  detailsGeographiques: feature.properties.detailsGeographiques,
+  chefLieuPremiereLettre: feature.properties.chefLieuPremiereLettre,
+  nombreDeCommunes: feature.properties.nombreDeCommunes,
   geometry: feature.geometry,
 }));
 
 // Function to connect to MongoDB and get the used departments collection
 async function getUsedDepartmentsCollection() {
   try {
-    await client.connect();
+    await client.connect(); // Utilisez await pour s'assurer que la connexion est bien établie
     const db = client.db("departemental");
     return db.collection("usedDepartments");
   } catch (error) {
-    console.error("Failed to connect to MongoDB:", error);
+    console.error("Failed to connect to MongoDB:", error.message);
+    throw error; // Rethrow error for better debugging
   }
 }
 
@@ -56,13 +75,11 @@ async function pickNewDepartment() {
   }
 
   const usedDepartmentsCollection = await getUsedDepartmentsCollection();
-
   // Store the new department in MongoDB
-  await usedDepartmentsCollection.insertOne({
+  const res = await usedDepartmentsCollection.insertOne({
     code: newDept.code,
     date: new Date().toISOString().split("T")[0], // Store the date in 'YYYY-MM-DD' format
   });
-
   console.log(`New department of the day picked: ${newDept.name}`);
   return newDept;
 }
@@ -88,6 +105,7 @@ app.get("/api/department-of-the-day", async (req, res) => {
   } else {
     // Pick a new department if none found for today
     const newDept = await pickNewDepartment();
+    console.log(newDept);
     res.json(newDept);
   }
 });
@@ -101,7 +119,7 @@ cron.schedule("0 0 * * *", async () => {
 app.listen(PORT, async () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 
-    // Clear all used departments and pick a new one
-    await clearUsedDepartments();
-    await pickNewDepartment();
+  // Clear all used departments and pick a new one
+  await clearUsedDepartments();
+  await pickNewDepartment();
 });

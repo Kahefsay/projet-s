@@ -1,0 +1,23 @@
+/* src/fonts.css */
+@font-face {
+  font-family: "Marianne";
+  src: url("../../public/marianne/Marianne-Regular.woff2") format("woff2"), url("../../public/marianne/Marianne-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Marianne";
+  src: url("../../public/marianne/Marianne-Bold.woff2") format("woff2"), url("../../public/marianne/Marianne-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Marianne";
+  src: url("../../public/marianne/Marianne-Regular_Italic.woff2") format("woff2"), url("../../public/marianne/Marianne-Regular_Italic.woff") format("woff");
+  font-weight: italic;
+  font-style: normal;
+}
+
+/* Add additional styles for other weights or styles as needed */
