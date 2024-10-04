@@ -6,35 +6,24 @@ function ModeSelection({ setMode }) {
   const modes = [
     {
       title: "CLASSIQUE",
-      description:
-        "Le mode classique consiste à deviner le bon département en recevant des indices après chaque tentative.",
+      description: "Deviner le bon département en recevant des indices après chaque tentative.",
       value: "classic",
     },
     {
       title: "CONTOUR",
-      description: "Le mode contour consite à deviner le département à partir de son contour géographique.",
+      description: "Deviner le département à partir de son contour géographique.",
       value: "contour",
     },
     {
       title: "SATELLITE",
-      description: "Le mode satellite consite à deviner le département à partir d'une image satellite.",
+      description: "Deviner le département à partir d'une image satellite.",
       value: "satelitte",
-    },
-    {
-      title: "???",
-      description: "Le mode ??? consite à deviner le département à partir de ???.",
-      value: "???",
-    },
-    {
-      title: "???",
-      description: "Le mode ??? consite à deviner le département à partir de ???.",
-      value: "???",
     },
   ];
 
   const handleModeClick = (mode) => {
-    if (mode.value !== "contour") {
-      // Show snackbar if "Classique" is clicked
+    if (mode.value === "satelitte") {
+      // Show snackbar if "satellite" is clicked
       setSnackbarOpen(true);
     } else {
       // Change the mode if any other mode is clicked

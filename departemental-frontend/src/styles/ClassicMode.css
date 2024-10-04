@@ -1,0 +1,81 @@
+/* Container for the header and attempts */
+.attempt-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Header row */
+.attempt-header {
+  display: grid;
+  grid-template-columns: 220px 250px 170px 180px 150px 150px; /* Set fixed column sizes */
+  background-color: #e0e0e0;
+  font-family: "Marianne";
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+/* General styling for both header and rows */
+.attempt-row,
+.attempt-header {
+  display: grid;
+  grid-template-columns: 220px 250px 170px 180px 150px 150px; /* Fixed column sizes for rows */
+  align-items: center;
+  padding: 8px;
+  gap: 0; /* Remove gaps to maintain grid structure */
+}
+
+/* Styling for each column */
+.attempt-cell,
+.header-cell {
+  padding: 8px 12px;
+  text-align: center;
+  font-family: "Marianne";
+  border-right: 1px solid #ccc; /* Separator between cells */
+  white-space: nowrap; /* Prevent text from wrapping */
+  line-height: 2rem;
+}
+
+.attempt-cell:last-child,
+.header-cell:last-child {
+  border-right: none; /* Remove border on last cell */
+}
+
+/* Style for attempt name cell */
+.attempt-name {
+  font-weight: bold;
+}
+
+/* Styling for hint cells */
+.hint-cell.correct {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.hint-cell.medium {
+  background-color: #ffa726; /* Orange */
+  color: white;
+}
+
+.hint-cell.incorrect {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+.hint-cell.neutral {
+  background-color: #f5f5f5; /* Gray */
+  color: black;
+}
+
+.attempt-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.attempt-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}

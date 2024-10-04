@@ -6,6 +6,7 @@ const departementsInfo = [
   {
     "01": {
       nom: "Ain",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 5762,
       population: 652432,
       detailsGeographiques: "montagneux",
@@ -14,6 +15,7 @@ const departementsInfo = [
     },
     "02": {
       nom: "Aisne",
+      region: "Hauts-de-France",
       superficie: 7369,
       population: 531345,
       detailsGeographiques: "plateaux",
@@ -22,6 +24,7 @@ const departementsInfo = [
     },
     "03": {
       nom: "Allier",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 7340,
       population: 335875,
       detailsGeographiques: "plaine",
@@ -30,6 +33,7 @@ const departementsInfo = [
     },
     "04": {
       nom: "Alpes-de-Haute-Provence",
+      region: "Provence-Alpes-Côte d'Azur",
       superficie: 6925,
       population: 164708,
       detailsGeographiques: "montagneux",
@@ -38,6 +42,7 @@ const departementsInfo = [
     },
     "05": {
       nom: "Hautes-Alpes",
+      region: "Provence-Alpes-Côte d'Azur",
       superficie: 5549,
       population: 141107,
       detailsGeographiques: "montagneux",
@@ -46,6 +51,7 @@ const departementsInfo = [
     },
     "06": {
       nom: "Alpes-Maritimes",
+      region: "Provence-Alpes-Côte d'Azur",
       superficie: 4299,
       population: 1085935,
       detailsGeographiques: "côtier, montagneux",
@@ -54,6 +60,7 @@ const departementsInfo = [
     },
     "07": {
       nom: "Ardèche",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 5529,
       population: 328278,
       detailsGeographiques: "montagneux, plateaux",
@@ -62,6 +69,7 @@ const departementsInfo = [
     },
     "08": {
       nom: "Ardennes",
+      region: "Grand Est",
       superficie: 5229,
       population: 275978,
       detailsGeographiques: "plateaux",
@@ -70,6 +78,7 @@ const departementsInfo = [
     },
     "09": {
       nom: "Ariège",
+      region: "Occitanie",
       superficie: 4890,
       population: 152108,
       detailsGeographiques: "montagneux",
@@ -78,6 +87,7 @@ const departementsInfo = [
     },
     10: {
       nom: "Aube",
+      region: "Grand Est",
       superficie: 6004,
       population: 306429,
       detailsGeographiques: "plaine",
@@ -86,6 +96,7 @@ const departementsInfo = [
     },
     11: {
       nom: "Aude",
+      region: "Occitanie",
       superficie: 6139,
       population: 375065,
       detailsGeographiques: "côtier, montagneux",
@@ -94,6 +105,7 @@ const departementsInfo = [
     },
     12: {
       nom: "Aveyron",
+      region: "Occitanie",
       superficie: 8736,
       population: 278035,
       detailsGeographiques: "montagneux, plateaux",
@@ -102,6 +114,7 @@ const departementsInfo = [
     },
     13: {
       nom: "Bouches-du-Rhône",
+      region: "Provence-Alpes-Côte d'Azur",
       superficie: 5087,
       population: 2036712,
       detailsGeographiques: "côtier, plateaux",
@@ -110,6 +123,7 @@ const departementsInfo = [
     },
     14: {
       nom: "Calvados",
+      region: "Normandie",
       superficie: 5550,
       population: 694905,
       detailsGeographiques: "côtier, plateaux",
@@ -118,6 +132,7 @@ const departementsInfo = [
     },
     15: {
       nom: "Cantal",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 5726,
       population: 145851,
       detailsGeographiques: "montagneux",
@@ -126,6 +141,7 @@ const departementsInfo = [
     },
     16: {
       nom: "Charente",
+      region: "Nouvelle-Aquitaine",
       superficie: 5956,
       population: 353948,
       detailsGeographiques: "plateaux",
@@ -134,6 +150,7 @@ const departementsInfo = [
     },
     17: {
       nom: "Charente-Maritime",
+      region: "Nouvelle-Aquitaine",
       superficie: 6864,
       population: 656157,
       detailsGeographiques: "côtier, plateaux",
@@ -142,6 +159,7 @@ const departementsInfo = [
     },
     18: {
       nom: "Cher",
+      region: "Centre-Val de Loire",
       superficie: 7235,
       population: 302306,
       detailsGeographiques: "plaine",
@@ -150,6 +168,7 @@ const departementsInfo = [
     },
     19: {
       nom: "Corrèze",
+      region: "Nouvelle-Aquitaine",
       superficie: 5857,
       population: 240072,
       detailsGeographiques: "montagneux, plateaux",
@@ -158,6 +177,7 @@ const departementsInfo = [
     },
     "2A": {
       nom: "Corse-du-Sud",
+      region: "Corse",
       superficie: 4014,
       population: 158507,
       detailsGeographiques: "côtier, montagneux",
@@ -166,6 +186,7 @@ const departementsInfo = [
     },
     "2B": {
       nom: "Haute-Corse",
+      region: "Corse",
       superficie: 4666,
       population: 182639,
       detailsGeographiques: "côtier, montagneux",
@@ -174,6 +195,7 @@ const departementsInfo = [
     },
     21: {
       nom: "Côte-d'Or",
+      region: "Bourgogne-Franche-Comté",
       superficie: 8763,
       population: 533213,
       detailsGeographiques: "plateaux",
@@ -182,6 +204,7 @@ const departementsInfo = [
     },
     22: {
       nom: "Côtes-d'Armor",
+      region: "Bretagne",
       superficie: 6878,
       population: 598814,
       detailsGeographiques: "côtier",
@@ -190,6 +213,7 @@ const departementsInfo = [
     },
     23: {
       nom: "Creuse",
+      region: "Nouvelle-Aquitaine",
       superficie: 5565,
       population: 116617,
       detailsGeographiques: "montagneux",
@@ -198,6 +222,7 @@ const departementsInfo = [
     },
     24: {
       nom: "Dordogne",
+      region: "Nouvelle-Aquitaine",
       superficie: 9060,
       population: 416971,
       detailsGeographiques: "plateaux",
@@ -206,6 +231,7 @@ const departementsInfo = [
     },
     25: {
       nom: "Doubs",
+      region: "Bourgogne-Franche-Comté",
       superficie: 5234,
       population: 541597,
       detailsGeographiques: "montagneux",
@@ -214,6 +240,7 @@ const departementsInfo = [
     },
     26: {
       nom: "Drôme",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 6530,
       population: 527989,
       detailsGeographiques: "montagneux, plateaux",
@@ -222,6 +249,7 @@ const departementsInfo = [
     },
     27: {
       nom: "Eure",
+      region: "Normandie",
       superficie: 6040,
       population: 599527,
       detailsGeographiques: "plateaux",
@@ -230,6 +258,7 @@ const departementsInfo = [
     },
     28: {
       nom: "Eure-et-Loir",
+      region: "Centre-Val de Loire",
       superficie: 5880,
       population: 432456,
       detailsGeographiques: "plaine",
@@ -238,6 +267,7 @@ const departementsInfo = [
     },
     29: {
       nom: "Finistère",
+      region: "Bretagne",
       superficie: 6733,
       population: 915090,
       detailsGeographiques: "côtier",
@@ -246,6 +276,7 @@ const departementsInfo = [
     },
     30: {
       nom: "Gard",
+      region: "Occitanie",
       superficie: 5853,
       population: 748437,
       detailsGeographiques: "côtier, montagneux",
@@ -254,6 +285,7 @@ const departementsInfo = [
     },
     31: {
       nom: "Haute-Garonne",
+      region: "Occitanie",
       superficie: 6309,
       population: 1476820,
       detailsGeographiques: "montagneux, plateaux",
@@ -262,6 +294,7 @@ const departementsInfo = [
     },
     32: {
       nom: "Gers",
+      region: "Occitanie",
       superficie: 6257,
       population: 191091,
       detailsGeographiques: "plateaux",
@@ -270,6 +303,7 @@ const departementsInfo = [
     },
     33: {
       nom: "Gironde",
+      region: "Nouvelle-Aquitaine",
       superficie: 10000,
       population: 1629366,
       detailsGeographiques: "côtier, plateaux",
@@ -278,6 +312,7 @@ const departementsInfo = [
     },
     34: {
       nom: "Hérault",
+      region: "Occitanie",
       superficie: 6224,
       population: 1175237,
       detailsGeographiques: "côtier, plateaux",
@@ -286,6 +321,7 @@ const departementsInfo = [
     },
     35: {
       nom: "Ille-et-Vilaine",
+      region: "Bretagne",
       superficie: 6775,
       population: 1080865,
       detailsGeographiques: "côtier, plateaux",
@@ -294,6 +330,7 @@ const departementsInfo = [
     },
     36: {
       nom: "Indre",
+      region: "Centre-Val de Loire",
       superficie: 6791,
       population: 216275,
       detailsGeographiques: "plaine",
@@ -302,6 +339,7 @@ const departementsInfo = [
     },
     37: {
       nom: "Indre-et-Loire",
+      region: "Centre-Val de Loire",
       superficie: 6127,
       population: 617413,
       detailsGeographiques: "plaine",
@@ -310,6 +348,7 @@ const departementsInfo = [
     },
     38: {
       nom: "Isère",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 7431,
       population: 1275181,
       detailsGeographiques: "montagneux",
@@ -318,6 +357,7 @@ const departementsInfo = [
     },
     39: {
       nom: "Jura",
+      region: "Bourgogne-Franche-Comté",
       superficie: 4999,
       population: 260517,
       detailsGeographiques: "montagneux",
@@ -326,6 +366,7 @@ const departementsInfo = [
     },
     40: {
       nom: "Landes",
+      region: "Nouvelle-Aquitaine",
       superficie: 9243,
       population: 414974,
       detailsGeographiques: "côtier, plateaux",
@@ -334,6 +375,7 @@ const departementsInfo = [
     },
     41: {
       nom: "Loir-et-Cher",
+      region: "Centre-Val de Loire",
       superficie: 6343,
       population: 329173,
       detailsGeographiques: "plaine",
@@ -342,6 +384,7 @@ const departementsInfo = [
     },
     42: {
       nom: "Loire",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 4781,
       population: 762659,
       detailsGeographiques: "montagneux",
@@ -350,6 +393,7 @@ const departementsInfo = [
     },
     43: {
       nom: "Haute-Loire",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 4977,
       population: 227283,
       detailsGeographiques: "montagneux",
@@ -358,6 +402,7 @@ const departementsInfo = [
     },
     44: {
       nom: "Loire-Atlantique",
+      region: "Pays de la Loire",
       superficie: 6815,
       population: 1436736,
       detailsGeographiques: "côtier, plateaux",
@@ -366,6 +411,7 @@ const departementsInfo = [
     },
     45: {
       nom: "Loiret",
+      region: "Centre-Val de Loire",
       superficie: 6775,
       population: 686362,
       detailsGeographiques: "plaine",
@@ -374,6 +420,7 @@ const departementsInfo = [
     },
     46: {
       nom: "Lot",
+      region: "Occitanie",
       superficie: 5217,
       population: 173420,
       detailsGeographiques: "plateaux",
@@ -382,400 +429,447 @@ const departementsInfo = [
     },
     47: {
       nom: "Lot-et-Garonne",
+      region: "Nouvelle-Aquitaine",
       superficie: 5361,
       population: 331977,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "A", // Agen
+      chefLieuPremiereLettre: "A",
       nombreDeCommunes: 319,
     },
     48: {
       nom: "Lozère",
+      region: "Occitanie",
       superficie: 5167,
       population: 76052,
       detailsGeographiques: "montagneux",
-      chefLieuPremiereLettre: "M", // Mende
+      chefLieuPremiereLettre: "M",
       nombreDeCommunes: 152,
     },
     49: {
       nom: "Maine-et-Loire",
+      region: "Pays de la Loire",
       superficie: 7166,
       population: 819896,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "A", // Angers
+      chefLieuPremiereLettre: "A",
       nombreDeCommunes: 177,
     },
     50: {
       nom: "Manche",
+      region: "Normandie",
       superficie: 5938,
       population: 495045,
       detailsGeographiques: "côtier",
-      chefLieuPremiereLettre: "S", // Saint-Lô
+      chefLieuPremiereLettre: "S",
       nombreDeCommunes: 446,
     },
     51: {
       nom: "Marne",
+      region: "Grand Est",
       superficie: 8162,
       population: 566522,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "C", // Châlons-en-Champagne
+      chefLieuPremiereLettre: "C",
       nombreDeCommunes: 613,
     },
     52: {
       nom: "Haute-Marne",
+      region: "Grand Est",
       superficie: 6211,
       population: 172512,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "C", // Chaumont
+      chefLieuPremiereLettre: "C",
       nombreDeCommunes: 426,
     },
     53: {
       nom: "Mayenne",
+      region: "Pays de la Loire",
       superficie: 5175,
       population: 307687,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "L", // Laval
+      chefLieuPremiereLettre: "L",
       nombreDeCommunes: 240,
     },
     54: {
       nom: "Meurthe-et-Moselle",
+      region: "Grand Est",
       superficie: 5246,
       population: 733760,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "N", // Nancy
+      chefLieuPremiereLettre: "N",
       nombreDeCommunes: 591,
     },
     55: {
       nom: "Meuse",
+      region: "Grand Est",
       superficie: 6211,
       population: 184083,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "B", // Bar-le-Duc
+      chefLieuPremiereLettre: "B",
       nombreDeCommunes: 499,
     },
     56: {
       nom: "Morbihan",
+      region: "Bretagne",
       superficie: 6823,
       population: 766375,
       detailsGeographiques: "côtier",
-      chefLieuPremiereLettre: "V", // Vannes
+      chefLieuPremiereLettre: "V",
       nombreDeCommunes: 249,
     },
     57: {
       nom: "Moselle",
+      region: "Grand Est",
       superficie: 6216,
       population: 1048207,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "M", // Metz
+      chefLieuPremiereLettre: "M",
       nombreDeCommunes: 725,
     },
     58: {
       nom: "Nièvre",
+      region: "Bourgogne-Franche-Comté",
       superficie: 6817,
       population: 204313,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "N", // Nevers
+      chefLieuPremiereLettre: "N",
       nombreDeCommunes: 309,
     },
     59: {
       nom: "Nord",
+      region: "Hauts-de-France",
       superficie: 5743,
       population: 2605924,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "L", // Lille
+      chefLieuPremiereLettre: "L",
       nombreDeCommunes: 648,
     },
     60: {
       nom: "Oise",
+      region: "Hauts-de-France",
       superficie: 5860,
       population: 834105,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "B", // Beauvais
+      chefLieuPremiereLettre: "B",
       nombreDeCommunes: 679,
     },
     61: {
       nom: "Orne",
+      region: "Normandie",
       superficie: 6103,
       population: 279942,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "A", // Alençon
+      chefLieuPremiereLettre: "A",
       nombreDeCommunes: 385,
     },
     62: {
       nom: "Pas-de-Calais",
+      region: "Hauts-de-France",
       superficie: 6671,
       population: 1468200,
       detailsGeographiques: "côtier, plaine",
-      chefLieuPremiereLettre: "A", // Arras
+      chefLieuPremiereLettre: "A",
       nombreDeCommunes: 891,
     },
     63: {
       nom: "Puy-de-Dôme",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 7970,
       population: 660167,
       detailsGeographiques: "montagneux",
-      chefLieuPremiereLettre: "C", // Clermont-Ferrand
+      chefLieuPremiereLettre: "C",
       nombreDeCommunes: 464,
     },
     64: {
       nom: "Pyrénées-Atlantiques",
+      region: "Nouvelle-Aquitaine",
       superficie: 7645,
       population: 682621,
       detailsGeographiques: "côtier, montagneux",
-      chefLieuPremiereLettre: "P", // Pau
+      chefLieuPremiereLettre: "P",
       nombreDeCommunes: 546,
     },
     65: {
       nom: "Hautes-Pyrénées",
+      region: "Occitanie",
       superficie: 4464,
       population: 229567,
       detailsGeographiques: "montagneux",
-      chefLieuPremiereLettre: "T", // Tarbes
+      chefLieuPremiereLettre: "T",
       nombreDeCommunes: 469,
     },
     66: {
       nom: "Pyrénées-Orientales",
+      region: "Occitanie",
       superficie: 4116,
       population: 481691,
       detailsGeographiques: "côtier, montagneux",
-      chefLieuPremiereLettre: "P", // Perpignan
+      chefLieuPremiereLettre: "P",
       nombreDeCommunes: 226,
     },
     67: {
       nom: "Bas-Rhin",
+      region: "Grand Est",
       superficie: 4755,
       population: 1152425,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "S", // Strasbourg
+      chefLieuPremiereLettre: "S",
       nombreDeCommunes: 514,
     },
     68: {
       nom: "Haut-Rhin",
+      region: "Grand Est",
       superficie: 3524,
       population: 767842,
       detailsGeographiques: "montagneux",
-      chefLieuPremiereLettre: "C", // Colmar
+      chefLieuPremiereLettre: "C",
       nombreDeCommunes: 366,
     },
     69: {
       nom: "Rhône",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 3249,
       population: 1891445,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "L", // Lyon
+      chefLieuPremiereLettre: "L",
       nombreDeCommunes: 208,
     },
     70: {
       nom: "Haute-Saône",
+      region: "Bourgogne-Franche-Comté",
       superficie: 5360,
       population: 234685,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "V", // Vesoul
+      chefLieuPremiereLettre: "V",
       nombreDeCommunes: 539,
     },
     71: {
       nom: "Saône-et-Loire",
+      region: "Bourgogne-Franche-Comté",
       superficie: 8575,
       population: 549220,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "M", // Mâcon
+      chefLieuPremiereLettre: "M",
       nombreDeCommunes: 565,
     },
     72: {
       nom: "Sarthe",
+      region: "Pays de la Loire",
       superficie: 6206,
       population: 567968,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "L", // Le Mans
+      chefLieuPremiereLettre: "L",
       nombreDeCommunes: 354,
     },
     73: {
       nom: "Savoie",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 6028,
       population: 431174,
       detailsGeographiques: "montagneux",
-      chefLieuPremiereLettre: "C", // Chambéry
+      chefLieuPremiereLettre: "C",
       nombreDeCommunes: 273,
     },
     74: {
       nom: "Haute-Savoie",
+      region: "Auvergne-Rhône-Alpes",
       superficie: 4388,
       population: 826094,
       detailsGeographiques: "montagneux",
-      chefLieuPremiereLettre: "A", // Annecy
+      chefLieuPremiereLettre: "A",
       nombreDeCommunes: 279,
     },
     75: {
       nom: "Paris",
+      region: "Île-de-France",
       superficie: 105,
       population: 2165423,
       detailsGeographiques: "urbain",
-      chefLieuPremiereLettre: "P", // Paris
+      chefLieuPremiereLettre: "P",
       nombreDeCommunes: 1,
     },
     76: {
       nom: "Seine-Maritime",
+      region: "Normandie",
       superficie: 6278,
       population: 1261466,
       detailsGeographiques: "côtier",
-      chefLieuPremiereLettre: "R", // Rouen
+      chefLieuPremiereLettre: "R",
       nombreDeCommunes: 708,
     },
     77: {
       nom: "Seine-et-Marne",
+      region: "Île-de-France",
       superficie: 5915,
       population: 1417480,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "M", // Melun
+      chefLieuPremiereLettre: "M",
       nombreDeCommunes: 507,
     },
     78: {
       nom: "Yvelines",
+      region: "Île-de-France",
       superficie: 2284,
       population: 1460437,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "V", // Versailles
+      chefLieuPremiereLettre: "V",
       nombreDeCommunes: 259,
     },
     79: {
       nom: "Deux-Sèvres",
+      region: "Nouvelle-Aquitaine",
       superficie: 5999,
       population: 374392,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "N", // Niort
+      chefLieuPremiereLettre: "N",
       nombreDeCommunes: 256,
     },
     80: {
       nom: "Somme",
+      region: "Hauts-de-France",
       superficie: 6170,
       population: 571211,
       detailsGeographiques: "côtier, plateaux",
-      chefLieuPremiereLettre: "A", // Amiens
+      chefLieuPremiereLettre: "A",
       nombreDeCommunes: 772,
     },
     81: {
       nom: "Tarn",
+      region: "Occitanie",
       superficie: 5758,
       population: 387099,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "A", // Albi
+      chefLieuPremiereLettre: "A",
       nombreDeCommunes: 314,
     },
     82: {
       nom: "Tarn-et-Garonne",
+      region: "Occitanie",
       superficie: 3718,
       population: 259107,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "M", // Montauban
+      chefLieuPremiereLettre: "M",
       nombreDeCommunes: 195,
     },
     83: {
       nom: "Var",
+      region: "Provence-Alpes-Côte d'Azur",
       superficie: 5973,
       population: 1088162,
       detailsGeographiques: "côtier, montagneux",
-      chefLieuPremiereLettre: "T", // Toulon
+      chefLieuPremiereLettre: "T",
       nombreDeCommunes: 153,
     },
     84: {
       nom: "Vaucluse",
+      region: "Provence-Alpes-Côte d'Azur",
       superficie: 3567,
       population: 565264,
       detailsGeographiques: "plateaux, montagneux",
-      chefLieuPremiereLettre: "A", // Avignon
+      chefLieuPremiereLettre: "A",
       nombreDeCommunes: 151,
     },
     85: {
       nom: "Vendée",
+      region: "Pays de la Loire",
       superficie: 6720,
       population: 685442,
       detailsGeographiques: "côtier, plaine",
-      chefLieuPremiereLettre: "L", // La Roche-sur-Yon
+      chefLieuPremiereLettre: "L",
       nombreDeCommunes: 255,
     },
     86: {
       nom: "Vienne",
+      region: "Nouvelle-Aquitaine",
       superficie: 6990,
       population: 439151,
       detailsGeographiques: "plateaux",
-      chefLieuPremiereLettre: "P", // Poitiers
+      chefLieuPremiereLettre: "P",
       nombreDeCommunes: 266,
     },
     87: {
       nom: "Haute-Vienne",
+      region: "Nouvelle-Aquitaine",
       superficie: 5520,
       population: 372359,
       detailsGeographiques: "montagneux, plateaux",
-      chefLieuPremiereLettre: "L", // Limoges
+      chefLieuPremiereLettre: "L",
       nombreDeCommunes: 195,
     },
     88: {
       nom: "Vosges",
+      region: "Grand Est",
       superficie: 5874,
       population: 364499,
       detailsGeographiques: "montagneux",
-      chefLieuPremiereLettre: "E", // Épinal
+      chefLieuPremiereLettre: "E",
       nombreDeCommunes: 507,
     },
     89: {
       nom: "Yonne",
+      region: "Bourgogne-Franche-Comté",
       superficie: 7428,
       population: 335707,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "A", // Auxerre
+      chefLieuPremiereLettre: "A",
       nombreDeCommunes: 428,
     },
     90: {
       nom: "Territoire de Belfort",
+      region: "Bourgogne-Franche-Comté",
       superficie: 609,
       population: 144318,
       detailsGeographiques: "montagneux",
-      chefLieuPremiereLettre: "B", // Belfort
+      chefLieuPremiereLettre: "B",
       nombreDeCommunes: 102,
     },
     91: {
       nom: "Essonne",
+      region: "Île-de-France",
       superficie: 1814,
       population: 1301292,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "É", // Évry
+      chefLieuPremiereLettre: "É",
       nombreDeCommunes: 194,
     },
     92: {
       nom: "Hauts-de-Seine",
+      region: "Île-de-France",
       superficie: 176,
       population: 1630165,
       detailsGeographiques: "urbain",
-      chefLieuPremiereLettre: "N", // Nanterre
+      chefLieuPremiereLettre: "N",
       nombreDeCommunes: 36,
     },
     93: {
       nom: "Seine-Saint-Denis",
+      region: "Île-de-France",
       superficie: 236,
       population: 1659443,
       detailsGeographiques: "urbain",
-      chefLieuPremiereLettre: "B", // Bobigny
+      chefLieuPremiereLettre: "B",
       nombreDeCommunes: 40,
     },
     94: {
       nom: "Val-de-Marne",
+      region: "Île-de-France",
       superficie: 245,
       population: 1402360,
       detailsGeographiques: "urbain",
-      chefLieuPremiereLettre: "C", // Créteil
+      chefLieuPremiereLettre: "C",
       nombreDeCommunes: 47,
     },
     95: {
       nom: "Val-d'Oise",
+      region: "Île-de-France",
       superficie: 1246,
       population: 1260660,
       detailsGeographiques: "plaine",
-      chefLieuPremiereLettre: "C", // Cergy
+      chefLieuPremiereLettre: "C",
       nombreDeCommunes: 185,
     },
   },
 ];
-
-console.log(departementsInfo);
 
 // Fonction pour compléter les propriétés des départements
 function completeGeojsonProperties(geojson, info) {

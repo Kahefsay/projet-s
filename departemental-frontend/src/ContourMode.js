@@ -126,7 +126,8 @@ function ContourMode() {
   useEffect(() => {
     const fetchData = async () => {
       // Fetch the department of the day from the API
-      const departmentResponse = await fetch("https://departemental-backend.vercel.app/api/department-of-the-day");
+      // const departmentResponse = await fetch("https://departemental-backend.vercel.app/api/department-of-the-day");
+      const departmentResponse = await fetch("http://localhost:3001/api/department-of-the-day/contour");
       const departmentData = await departmentResponse.json();
 
       // Retrieve existing attempts from localStorage
@@ -198,7 +199,7 @@ function ContourMode() {
 
   const handleShare = () => {
     const attemptsString = attempts.map((attempt) => (attempt.correct ? "🟩" : "❌")).join("");
-    const shareMessage = `#departemental \n ${attemptsString}\n https://departemental-frontend.vercel.app/`;
+    const shareMessage = `#departemental-contour \n ${attemptsString}\n https://departemental-frontend.vercel.app/`;
     navigator.clipboard.writeText(shareMessage);
 
     setSnackbarMessage("Résultat copié dans le presse-papier");
@@ -222,7 +223,7 @@ function ContourMode() {
         <Card>
           <CardContent>
             <Typography variant="h4" align="center" sx={{ mb: 1, fontFamily: "Marianne", fontWeight: "bold" }}>
-              MODE CONTOUR
+              CONTOUR
             </Typography>
 
             {department && (
@@ -280,7 +281,12 @@ function ContourMode() {
                   />
 
                   <Box sx={{ display: "flex", justifyContent: "center" }}>
-                    <Button variant="contained" color="primary" onClick={() => handleSubmit(inputValue)}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      sx={{ backgroundColor: "#000091", "&:hover": { backgroundColor: "#1212ff" } }}
+                      onClick={() => handleSubmit(inputValue)}
+                    >
                       Valider
                     </Button>
                   </Box>
@@ -315,7 +321,7 @@ function ContourMode() {
 
             {gameEnded && (
               <Box sx={{ display: "flex", justifyContent: "center" }}>
-                <Button variant="outlined" color="secondary" onClick={handleShare}>
+                <Button variant="outlined" sx={{ borderColor: "#000091", color: "#000091" }} onClick={handleShare}>
                   Partager le résultat
                 </Button>
               </Box>
