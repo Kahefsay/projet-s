@@ -3,7 +3,7 @@ export const fetchDepartmentsData = (setDepartment, setDepartmentsList) => {
     .then((res) => res.json())
     .then((data) => setDepartmentsList(data.features));
 
-  fetch("http://localhost:3001/api/department-of-the-day/classic")
+  fetch("https://departemental-backend.vercel.app/api/department-of-the-day/classic")
     .then((res) => res.json())
     .then((data) => setDepartment(data));
 };

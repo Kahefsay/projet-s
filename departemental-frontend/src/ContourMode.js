@@ -126,8 +126,8 @@ function ContourMode() {
   useEffect(() => {
     const fetchData = async () => {
       // Fetch the department of the day from the API
-      // const departmentResponse = await fetch("https://departemental-backend.vercel.app/api/department-of-the-day");
-      const departmentResponse = await fetch("http://localhost:3001/api/department-of-the-day/contour");
+      const departmentResponse = await fetch("https://departemental-backend.vercel.app/api/department-of-the-day");
+      // const departmentResponse = await fetch("http://localhost:3001/api/department-of-the-day/contour");
       const departmentData = await departmentResponse.json();
 
       // Retrieve existing attempts from localStorage
